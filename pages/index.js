@@ -97,7 +97,7 @@ export default function Home() {
           </div>
           <div className={idxStyles.opGrid}>
             <div className={idxStyles.grid2}>
-              <h2 className={`${idxStyles.highlightFont} ${idxStyles.titleFlexStart}`} >How We Operate</h2>
+              <h2 className={idxStyles.titleFlexStart} >How We Operate</h2>
               <p>
                 We analyse the history of your brand.<br /><br />
                 We craft a strategy that is in harmony with your brand vision<br /><br />
@@ -107,7 +107,7 @@ export default function Home() {
               </p>
             </div>
             <div className={idxStyles.grid2}>
-              <h2 className={`${idxStyles.highlightFont} ${idxStyles.titleFlexStart}`}>How We Don't Operate</h2>
+              <h2 className={idxStyles.titleFlexStart}>How We Dont Operate</h2>
               <p>
                 We do not create the content for campaigns<br /><br />
                 We do not offer google ads, email marketing or SEO Optimization<br /><br />
@@ -125,7 +125,7 @@ export default function Home() {
         <div className={idxStyles.mainGrid}>
           <div className={idxStyles.opGrid}>
             <div className={idxStyles.grid2}>
-              <h2 className={`${idxStyles.highlightFont} ${idxStyles.titleFlexStart}`}>Next Gen Agency</h2>
+              <h2 className={idxStyles.titleFlexStart}>Next Gen Agency</h2>
               <p>
                 We know how the old-fashioned agency works. Month-long on-boarding processes, high start-up fees,
                 poor communication, and finally; the lack of pace.
@@ -177,7 +177,7 @@ export default function Home() {
           </div>
           <div className={idxStyles.opGrid}>
             <div className={idxStyles.grid2}>
-              <h2 className={`${idxStyles.highlightFont} ${idxStyles.titleFlexStart}`}>Book A Free Strategy Call</h2>
+              <h2 className={idxStyles.titleFlexStart}>Book A Free Strategy Call</h2>
               <p>
                 We know how the old-fashioned agency works. Month-long on-boarding processes, high start-up fees, poor communication, and finally; the lack of pace.
 
@@ -185,7 +185,7 @@ export default function Home() {
 
                 We’ll handle the boring logistics, while you enjoy superior results being generated on a daily basis.
               </p>
-              <h2 className={`${idxStyles.highlightFont} ${idxStyles.titleFlexStart}`}>This Strategy Call Is Particularly For:</h2>
+              <h2 className={idxStyles.titleFlexStart}>This Strategy Call Is Particularly For:</h2>
               <p>
                 Businesses looking to increase their online sales with a breathtaking return on investment.<br /><br />
                 Businesses looking to optimise their social media marketing efforts in conjunction with the leading agency in the industry.<br /><br />
@@ -213,7 +213,7 @@ export default function Home() {
         >
           Powered by{' '}
           <span className={styles.logo}>
-            <Image src="/logo.svg" width={72} height={55} />
+            <Image alt="JPG Logo" src="/logo.svg" width={72} height={55} />
           </span>
         </a>
       </footer>
