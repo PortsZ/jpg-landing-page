@@ -1,0 +1,167 @@
+@font-face {
+    font-family: "Nunito";
+    src: url("../src/fonts/Nunito.ttf");
+  }
+
+  @font-face {
+    font-family: "BebasNeue";
+    src: url("../src/fonts/BebasNeue.ttf");
+  }
+/* font style
+
+    font-family: Nunito;
+    font-size: 24pt;
+    font-weight: 300;
+    
+*/
+  .headerContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    position: sticky;
+  }
+
+  .headerLine{
+    margin: 20px;
+    background-color: white;
+    color: white;
+    width: 300px;
+    height: 3px;
+  }
+
+  .mainGrid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    
+
+  }
+  .mainGrid2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    z-index: 0;
+    
+
+  }
+
+  .phoneContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50rem;
+    z-index: -5;
+    position: sticky;
+    top: 0;
+
+  }
+
+  .grid1{
+    margin-bottom: 50px;
+    margin-left: 80px;
+    margin-right: 80px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: -100;
+    font-family: Nunito;
+    font-size: 18pt;
+    font-weight: 100;
+  }
+
+  .highlightFont{
+    color: #FFDE59;
+    
+  }
+  
+
+  .gridNumbers{
+    border-color: #FFDE59;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: -100;
+    font-family: BebasNeue;
+    font-size: 30pt;
+    font-weight: 400;
+  }
+  .gridBorder{
+    z-index: -101;
+    background: rgb(0, 0, 0);
+    border-top: 8px solid #FFDE59;
+    border-bottom: 8px solid #FFDE59;
+    width: 102%;
+    margin-bottom: 50px;
+  }
+
+  .opGrid{
+    margin-left: 100px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;    
+    padding: 1rem;
+    font-family: Nunito;
+    font-size: 14pt;
+    font-weight: 100;
+    max-width: 55%;
+    
+  }
+  .titleFlexStart{
+    font-size: 28pt;
+    font-family: BebasNeue;
+    font-weight: 400;
+
+  }
+
+
+  .grid2{
+    margin-bottom: 50px;
+    margin-left: 25px;
+    margin-right: 25px;
+    display: inline;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+  }
+  .calendar{
+    width: 400px;
+    height: 800px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas: "overlay";
+  }
+
+  .calendar > div{
+    grid-area: overlay;
+  }
+.calendar > span{
+  grid-area: overlay;
+}
+
+.calendarPhoneContainer{
+  z-index: 10;
+  border: 10px solid #FFDE59;
+}
+
+
+
+.calendarContainer{
+  width:10%;
+  
+  padding: 1rem;
+  margin-left: 5%;
+  z-index: 50;
+  position: relative;
+}
