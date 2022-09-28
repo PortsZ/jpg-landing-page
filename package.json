@@ -9,11 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react-calendly":"4.1.0",
     "@splinetool/react-spline": "^2.2.2",
     "@splinetool/runtime": "^0.9.106",
     "next": "12.3.0",
     "react": "18.2.0",
+    "react-calendly": "^4.1.0",
     "react-dom": "18.2.0",
     "react-scroll": "^1.8.7"
   },
