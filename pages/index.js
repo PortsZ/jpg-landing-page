@@ -116,15 +116,16 @@ export default function Home() {
               </p>
             </div>
           </div>
-          {/* HOW WE OPERATE----------------------------------------------------------------------------------------------------------------- */}
-
-
-
-
         </div>
+        {/* HOW WE OPERATE----------------------------------------------------------------------------------------------------------------- */}
+
+
+
+
+
         <div className={idxStyles.mainGrid}>
           <div className={idxStyles.opGrid}>
-            <div className={idxStyles.grid2}>
+            <div className={idxStyles.grid3}>
               <h2 className={idxStyles.titleFlexStart}>Next Gen Agency</h2>
               <p>
                 We know how the old-fashioned agency works. Month-long on-boarding processes, high start-up fees,
@@ -148,10 +149,101 @@ export default function Home() {
 
 
 
+        <h2 className={idxStyles.titleFlexStart}>How we Serve you</h2>
+        <div className={idxStyles.mainGrid}>
+
+          <div className={idxStyles.grid1}>
+            <Image src={phoneRight} alt="JPG Logo" width={300} height={600} />
+          </div>
+          <div className={idxStyles.opGrid}>
+            <div className={idxStyles.grid2}>
+              <h2 className={idxStyles.titleFlexStart} >Done for You</h2>
+              <p>
+                We analyse the history of your brand.<br /><br />
+                We craft a strategy that is in harmony with your brand vision<br /><br />
+                We create & run campaigns that sell your product efficiently.<br /><br />
+                We collect & utilize data to continuously optimise & scale your campaigns.<br /><br />
+                We always strive to achieve a ROI of 4+ for our clients
+              </p>
+            </div>
+            <div className={idxStyles.grid2}>
+              <h2 className={idxStyles.titleFlexStart}>Done With You</h2>
+              <p>
+                We do not create the content for campaigns<br /><br />
+                We do not offer google ads, email marketing or SEO Optimization<br /><br />
+                We do not charge money to onboard you<br /><br />
+                We do not offer free trials
+              </p>
+            </div>
+          </div>
+
+        </div>
 
 
 
-        {/* data-url="https://calendly.com/jpgagency/strategy-meeting?text_color=070d20&primary_color=ffde59" */}
+
+
+
+
+        {/* STAT STRIP----------------------------------------------------------------------------------------------------------------- */}
+        <div className={idxStyles.gridBorder}>
+          <h2 className={idxStyles.titleFlexStart}>You’re Always Welcome To Schedule A Free Call With Our Team</h2>
+          
+            <p className={idxStyles.grid3}>
+              We’ll discuss strategy, tailored solutions, and elaborate on exactly
+              how we can help grow your business.
+            </p>
+          
+            <button>Book a free Strategy Call</button>
+        </div>
+        {/* STAT STRIP----------------------------------------------------------------------------------------------------------------- */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div className={idxStyles.mainGrid}>
+          <div className={idxStyles.grid1}>
+            <Image src={phoneLeft} alt="JPG Logo" width={300} height={600} />
+          </div>
+          <div className={idxStyles.opGrid}>
+            <div className={idxStyles.grid3}>
+              <h2 className={idxStyles.titleFlexStart}>Our Vision</h2>
+              <p>
+
+                We do care about your brand.
+                <span className={idxStyles.highlightFont}> We treat it as if it was our own. </span>
+                The recommendations we make to our clients are the recommendations we would
+                make if we owned their companies. Without regard to our own interest.
+                A great man once said that, and we choose to live by it. No matter which product
+                you’re selling, be prepared to provide us with a sample of the product.
+                <span className={idxStyles.highlightFont}> We always test our client’s products prior to advertising them. </span>
+                This lets us evaluate
+                the product quality, and it enables us to immerse ourselves into the perspective
+                of your future customers.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+
 
         {/* calendar ---------------------------------------------------------------------------------------------------------------- */}
 
@@ -170,7 +262,7 @@ export default function Home() {
               </div>
 
               <Image className={idxStyles.calendarPhoneContainer} src={phoneCenter} alt="JPG Logo" width={400} height={800} />
-              
+
 
             </div>
 
