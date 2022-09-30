@@ -3,14 +3,15 @@
     transition: all 2.5s;
 }
 .hiddenRight {
+    opacity: 0;
     transform: translateX(-100%);
-    transition: all 1s;
+    transition: all 1.5s;
 }
 
 .hiddenBottom {
     opacity: 0;
     transform: translateY(60%);
-    transition: all 1s;
+    transition: all 1.5s;
 }
 
 .hiddenLeftStrip{
@@ -33,6 +34,7 @@
 
 .animateLeft{
     transform: translateX(0);
+    opacity: 1;
 }
 .animateBottom{
     opacity: 1;

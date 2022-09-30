@@ -75,7 +75,7 @@ export default function Home() {//APP-------------------------------------------
   const [targetRef2, isVisible2] = useElementOnScreen(options);
   const [targetRef3, isVisible3] = useElementOnScreen(options);
   const [targetRef4, isVisible4] = useElementOnScreen(options);
-  const [targetRef5, isVisible5] = useElementOnScreen(options);
+  const [targetRef5, isVisible5] = useElementOnScreen(options2);
   const [targetRef6, isVisible6] = useElementOnScreen(options);
   const [targetRef7, isVisible7] = useElementOnScreen(options2);
   const [targetRef8, isVisible8] = useElementOnScreen(options3);
@@ -225,7 +225,7 @@ export default function Home() {//APP-------------------------------------------
           <div className={`${idxStyles.grid1} ${animations.hidden} ${isVisible5 ? animations.show : ''} `} ref={targetRef5}>
             <Image src={phoneRight} alt="JPG Logo" width={300} height={600} />
           </div>
-          <div className={`${idxStyles.opGrid} ${animations.hiddenBottom} ${isVisible5 ? animations.animateBottom : ''} `} ref={targetRef5}>
+          <div className={`${idxStyles.opGrid} ${animations.hiddenBottom} ${animations.hidden} ${isVisible4 ? animations.animateBottom : ''} `}>
             <div className={idxStyles.grid2}>
               <h2 className={`${idxStyles.titleFlexStart}`} >Done for You</h2>
               <p>
