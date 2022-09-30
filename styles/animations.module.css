@@ -1,0 +1,61 @@
+.hidden {
+    opacity: 0;
+    transition: all 2.5s;
+}
+.hiddenRight {
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.hiddenBottom {
+    opacity: 0;
+    transform: translateY(60%);
+    transition: all 1s;
+}
+
+.hiddenLeftStrip{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(-60%);
+    transition: all 1s;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+.show{
+    opacity: 1;
+    transition: all 2.5s;
+}
+
+.animateLeft{
+    transform: translateX(0);
+}
+.animateBottom{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animateLeftStrip{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animateLeftStrip1{
+    transition-delay: 200ms;
+    opacity: 1;
+    transform: translateX(0);
+}
+.animateLeftStrip2{
+    transition-delay: 400ms;
+    opacity: 1;
+    transform: translateX(0);
+}
+.animateLeftStrip3{
+    transition-delay: 600ms;
+    opacity: 1;
+    transform: translateX(0);
+}

@@ -2,22 +2,92 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import idxStyles from '../styles/index.module.css'
+import animations from '../styles/animations.module.css'
 import logo from '../src/images/logo.svg'
 import placeholder from '../src/images/imgPlaceholder.svg'
 import phoneCenter from '../src/images/phone-center.png'
 import phoneRight from '../src/images/phone-right.png'
 import phoneLeft from '../src/images/phone-left.png'
+import phoneSide from '../src/images/phone-side.png'
 import Spline from '@splinetool/react-spline';
 import { animateScroll as scroll } from 'react-scroll'
 import { scrollToTop } from 'react-scroll/modules/mixins/animate-scroll'
 import { InlineWidget } from "react-calendly";
+import { useEffect, useRef, useState, useMemo } from 'react'
+import React from 'react'
 
 
 const goToHome = () => {
   scroll.scrollToTop();
 }
 
-export default function Home() {
+const useElementOnScreen = (options) => {
+  const targetRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const callbackFunction = (entries) => {
+    const [entry] = entries;
+    setIsVisible(entry.isIntersecting);
+  }
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(callbackFunction, options);
+    if (targetRef.current) observer.observe(targetRef.current);
+
+    return () => {
+      if (targetRef.current) observer.unobserve(targetRef.current);
+    }
+  }, [targetRef, options]);
+
+  return [targetRef, isVisible]
+}
+
+
+export default function Home() {//APP---------------------------------------------------------------------------------------------
+
+  const options = useMemo(() => {
+    return {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.35
+    }
+  }, []);
+
+  const options2 = useMemo(() => {
+    return {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.7
+    }
+  }, []);
+
+  const options3 = useMemo(() => {
+    return {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.6
+    }
+  }, []);
+
+
+  const [targetRef, isVisible] = useElementOnScreen(options);
+  const [targetRef1, isVisible1] = useElementOnScreen(options);
+  const [targetRef2, isVisible2] = useElementOnScreen(options);
+  const [targetRef3, isVisible3] = useElementOnScreen(options);
+  const [targetRef4, isVisible4] = useElementOnScreen(options);
+  const [targetRef5, isVisible5] = useElementOnScreen(options);
+  const [targetRef6, isVisible6] = useElementOnScreen(options);
+  const [targetRef7, isVisible7] = useElementOnScreen(options2);
+  const [targetRef8, isVisible8] = useElementOnScreen(options3);
+  // const [targetRef9, isVisible9] = useElementOnScreen(options);
+  // const [targetRef10, isVisible10] = useElementOnScreen(options);
+
+
+
+
+
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -33,7 +103,9 @@ export default function Home() {
 
         <div className={idxStyles.headerContainer}>
           <line className={idxStyles.headerLine} />
-          <Image src={logo} onClick={goToHome} alt="JPG Logo" width={200} height={120} />
+          <span className={`${animations.hidden} ${isVisible ? animations.show : ''}`}>
+            <Image src={logo} onClick={goToHome} alt="JPG Logo" width={200} height={120} ref={targetRef} />
+          </span>
           <line className={idxStyles.headerLine} />
         </div>
 
@@ -50,7 +122,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className={idxStyles.grid1}>
+          <div className={`${idxStyles.grid1} ${animations.hidden} ${isVisible ? animations.show : ''}`} ref={targetRef}>
             <Image src={phoneRight} alt="JPG Logo" width={300} height={600} />
           </div>
 
@@ -63,20 +135,19 @@ export default function Home() {
 
         {/* STAT STRIP----------------------------------------------------------------------------------------------------------------- */}
         <div className={idxStyles.gridBorder}>
-          <div className={idxStyles.mainGrid}>
+          <div className={idxStyles.mainGrid} ref={targetRef1}>
 
-            <div className={idxStyles.gridNumbers}>
-              <p> 4 <br /><span className={idxStyles.highlightFont}>active clients</span> </p>
+              <div className={`${idxStyles.gridNumbers} ${animations.hiddenLeftStrip} ${isVisible1 ? animations.animateLeftStrip1 : ''} `}  >
+                <p> 4 <br /><span className={idxStyles.highlightFont}>active clients</span> </p>
+              </div>
 
-            </div>
-            <div className={idxStyles.gridNumbers}>
-              <p>$580.00 <br /><span className={idxStyles.highlightFont}>Monthly AD Spend</span> </p>
+              <div className={`${idxStyles.gridNumbers} ${animations.hiddenLeftStrip} ${isVisible1 ? animations.animateLeftStrip2 : ''} `} >
+                <p>$580.00 <br /><span className={idxStyles.highlightFont}>Monthly AD Spend</span> </p>
+              </div>
 
-            </div>
-            <div className={idxStyles.gridNumbers}>
-              <p>4.2 × <br /><span className={idxStyles.highlightFont}>Average ROI</span> </p>
-
-            </div>
+              <div className={`${idxStyles.gridNumbers} ${animations.hiddenLeftStrip} ${isVisible1 ? animations.animateLeftStrip3 : ''} `} >
+                <p>4.2 × <br /><span className={idxStyles.highlightFont}>Average ROI</span> </p>
+              </div>
 
           </div>
         </div>
@@ -86,16 +157,12 @@ export default function Home() {
 
 
 
-
-
-
-
         {/* HOW WE OPERATE----------------------------------------------------------------------------------------------------------------- */}
         <div className={idxStyles.mainGrid2}>
-          <div className={idxStyles.grid2}>
+          <div className={`${idxStyles.grid2} ${animations.hidden} ${isVisible2 ? animations.show : ''} `} ref={targetRef2}>
             <Image src={phoneLeft} alt="JPG Logo" width={300} height={600} />
           </div>
-          <div className={idxStyles.opGrid}>
+          <div className={`${idxStyles.opGrid} ${animations.hidden} ${isVisible2 ? animations.show : ''} `} ref={targetRef2}>
             <div className={idxStyles.grid2}>
               <h2 className={idxStyles.titleFlexStart} >How We Operate</h2>
               <p>
@@ -122,10 +189,10 @@ export default function Home() {
 
 
 
-
+        {/* Next Gen Agency------------------------------------------------------------------------------------------------------------- */}
         <div className={idxStyles.mainGrid}>
           <div className={idxStyles.opGrid}>
-            <div className={idxStyles.grid3}>
+            <div className={`${idxStyles.grid3} ${animations.hidden} ${isVisible3 ? animations.show : ''} `} ref={targetRef3}>
               <h2 className={idxStyles.titleFlexStart}>Next Gen Agency</h2>
               <p>
                 We know how the old-fashioned agency works. Month-long on-boarding processes, high start-up fees,
@@ -142,22 +209,25 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className={idxStyles.grid1}>
+          <div className={`${idxStyles.grid1} ${animations.hidden} ${isVisible3 ? animations.show : ''} `} >
             <Image src={phoneRight} alt="JPG Logo" width={300} height={600} />
           </div>
         </div>
+        {/* Next Gen Agency------------------------------------------------------------------------------------------------------------- */}
 
 
 
-        <h2 className={idxStyles.titleFlexStart}>How we Serve you</h2>
+        {/* How We Serve You------------------------------------------------------------------------------------------------------------ */}
+        <h2 className={`${idxStyles.titleFlexStart} ${animations.hidden} ${isVisible4 ? animations.show : ''} `} ref={targetRef4}>
+          How we Serve you</h2>
         <div className={idxStyles.mainGrid}>
 
-          <div className={idxStyles.grid1}>
+          <div className={`${idxStyles.grid1} ${animations.hidden} ${isVisible5 ? animations.show : ''} `} ref={targetRef5}>
             <Image src={phoneRight} alt="JPG Logo" width={300} height={600} />
           </div>
-          <div className={idxStyles.opGrid}>
+          <div className={`${idxStyles.opGrid} ${animations.hiddenBottom} ${isVisible5 ? animations.animateBottom : ''} `} ref={targetRef5}>
             <div className={idxStyles.grid2}>
-              <h2 className={idxStyles.titleFlexStart} >Done for You</h2>
+              <h2 className={`${idxStyles.titleFlexStart}`} >Done for You</h2>
               <p>
                 We analyse the history of your brand.<br /><br />
                 We craft a strategy that is in harmony with your brand vision<br /><br />
@@ -167,7 +237,7 @@ export default function Home() {
               </p>
             </div>
             <div className={idxStyles.grid2}>
-              <h2 className={idxStyles.titleFlexStart}>Done With You</h2>
+              <h2 className={`${idxStyles.titleFlexStart}`}>Done With You</h2>
               <p>
                 We do not create the content for campaigns<br /><br />
                 We do not offer google ads, email marketing or SEO Optimization<br /><br />
@@ -178,48 +248,17 @@ export default function Home() {
           </div>
 
         </div>
-
-
-
-
-
-
-
-        {/* STAT STRIP----------------------------------------------------------------------------------------------------------------- */}
-        <div className={idxStyles.gridBorder}>
-          <h2 className={idxStyles.titleFlexStart}>You’re Always Welcome To Schedule A Free Call With Our Team</h2>
-          
-            <p className={idxStyles.grid3}>
-              We’ll discuss strategy, tailored solutions, and elaborate on exactly
-              how we can help grow your business.
-            </p>
-          
-            <button>Book a free Strategy Call</button>
-        </div>
-        {/* STAT STRIP----------------------------------------------------------------------------------------------------------------- */}
-
-
-
-
-
-
-
-
-
-
-
-
-
+        {/* How We Serve You------------------------------------------------------------------------------------------------------------ */}
 
 
 
 
 
         <div className={idxStyles.mainGrid}>
-          <div className={idxStyles.grid1}>
-            <Image src={phoneLeft} alt="JPG Logo" width={300} height={600} />
+          <div className={`${idxStyles.grid2} ${animations.hidden} ${isVisible6 ? animations.show : ''} `} ref={targetRef6}>
+            <Image src={phoneSide} alt="JPG Logo" width={1200} height={604} />
           </div>
-          <div className={idxStyles.opGrid}>
+          <div className={`${idxStyles.opGrid} ${animations.hidden} ${isVisible6 ? animations.show : ''} `} ref={targetRef6}>
             <div className={idxStyles.grid3}>
               <h2 className={idxStyles.titleFlexStart}>Our Vision</h2>
               <p>
@@ -245,6 +284,28 @@ export default function Home() {
 
 
 
+
+
+        {/* STAT STRIP----------------------------------------------------------------------------------------------------------------- */}
+        <div className={idxStyles.gridBorder}>
+          <div className={`${animations.hidden} ${isVisible7 ? animations.show : ''} `} ref={targetRef7}>
+            <h2 className={idxStyles.titleFlexStart}>You’re Always Welcome To Schedule A Free Call With Our Team</h2>
+
+            <p className={idxStyles.grid3}>
+              We’ll discuss strategy, tailored solutions, and elaborate on exactly
+              how we can help grow your business.
+            </p>
+          </div>
+        </div>
+        {/* STAT STRIP----------------------------------------------------------------------------------------------------------------- */}
+
+
+
+
+
+
+
+
         {/* calendar ---------------------------------------------------------------------------------------------------------------- */}
 
 
@@ -252,10 +313,8 @@ export default function Home() {
 
 
         <div className={idxStyles.mainGrid}>
-          <div className={idxStyles.grid2}>
+          <div className={`${idxStyles.grid2} ${animations.hidden} ${isVisible8 ? animations.show : ''} `} ref={targetRef8}>
             <div className={idxStyles.calendar}>
-
-
 
               <div className={idxStyles.calendarContainer}>
                 <InlineWidget url="https://calendly.com/jpgagency/strategy-meeting?hide_event_type_details=1&hide_gdpr_banner=1&background_color=070d20&text_color=ffffff&primary_color=ffde59" />
@@ -263,12 +322,11 @@ export default function Home() {
 
               <Image className={idxStyles.calendarPhoneContainer} src={phoneCenter} alt="JPG Logo" width={400} height={800} />
 
-
             </div>
-
           </div>
+
           <div className={idxStyles.opGrid}>
-            <div className={idxStyles.grid2}>
+            <div className={`${idxStyles.grid2} ${animations.hiddenRight} ${isVisible8 ? animations.animateLeft : ''} `} >
               <h2 className={idxStyles.titleFlexStart}>Book A Free Strategy Call</h2>
               <p>
                 We know how the old-fashioned agency works. Month-long on-boarding processes, high start-up fees, poor communication, and finally; the lack of pace.
